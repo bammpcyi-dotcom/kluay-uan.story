@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ตำนานกล้วยอ้วน 🍌 นิทานแอนิเมชันแห่งกล้วยทอดสะท้านปฐพี</title>
+  <!-- Google Fonts: Kanit and Mali -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,600;0,800;0,900;1,800&family=Mali:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sound & Quick Controls Bar -->
+  <nav class="top-nav">
+    <div class="logo-badge">
+      <span class="banana-icon">🍌</span>
+      <span class="logo-text">กล้วยอ้วน <strong>THE STORY</strong></span>
+    </div>
+
+    <!-- Chapter Breadcrumbs -->
+    <div class="chapter-dots" id="chapterDots">
+      <button class="dot-btn active" data-chapter="0" title="บทนำ: จุดเริ่มต้นของพี่อ้วน">1</button>
+      <button class="dot-btn" data-chapter="1" title="ตอน 1: ตามหากล้วยทองคำ">2</button>
+      <button class="dot-btn" data-chapter="2" title="ตอน 2: แป้งสูตรลับงาหอม">3</button>
+      <button class="dot-btn" data-chapter="3" title="ตอน 3: กระทะเดือดซู่ซ่า">4</button>
+      <button class="dot-btn" data-chapter="4" title="ตอน 4: เสียงเคี้ยวสะเทือนซอย">5</button>
+      <button class="dot-btn" data-chapter="5" title="ตอน 5: หน้าร้าน & Delivery">6</button>
+    </div>
+
+    <div class="nav-actions">
+      <button id="toggleAudioBtn" class="pill-btn sound-off" title="เปิด/ปิดเสียงเอฟเฟกต์และดนตรี">
+        <span class="sound-icon">🔇</span>
+        <span class="sound-label">เปิดเสียง</span>
+      </button>
+      <button id="viewPosterBtn" class="pill-btn poster-btn" title="ดูโปสเตอร์ต้นฉบับ">
+        🖼️ ต้นฉบับ
+      </button>
+    </div>
+  </nav>
+
+  <!-- Interactive Story Container -->
+  <main class="story-container" id="storyContainer">
+
+    <!-- ================= SCENE 0: INTRO / PROLOGUE ================= -->
+    <section class="story-scene active" id="scene-0" data-index="0">
+      <div class="scene-bg grunge-bg"></div>
+      <div class="comic-splatter splatter-top-right"></div>
+      <div class="comic-splatter splatter-bottom-left"></div>
+
+      <div class="scene-content split-layout">
+        <!-- Left: Animated Character -->
+        <div class="char-col">
+          <div class="character-wrapper" id="charWrapper">
+            <!-- Cartoon SVG character: Phi Uan -->
+            <svg class="phi-uan-svg" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="comicShadow" x="-10%" y="-10%" width="130%" height="130%">
+                  <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#111" />
+                </filter>
+              </defs>
+              <!-- Body / T-Shirt -->
+              <g class="body-group">
+                <path d="M 110,240 C 90,260 60,330 50,420 C 130,440 270,440 350,420 C 340,330 310,260 290,240 Z" fill="#ffffff" stroke="#111" stroke-width="7" stroke-linejoin="round" />
+                <!-- Fold lines -->
+                <path d="M 85,320 Q 130,340 160,325" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" />
+                <path d="M 80,350 Q 115,365 140,355" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" />
+                <!-- Shirt doodle wave in yellow -->
+                <path d="M 160,320 Q 175,305 190,320 T 220,320 T 250,320 T 280,320" fill="none" stroke="#FFC700" stroke-width="7" stroke-linecap="round" />
+                <!-- Arms folded in front -->
+                <path d="M 60,340 C 80,380 150,400 240,390 C 290,380 320,350 335,320" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round" />
+                <path d="M 230,360 C 270,360 300,370 320,385" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" />
+              </g>
+
+              <!-- Neck -->
+              <path d="M 165,220 L 165,250 C 185,258 215,258 235,250 L 235,220 Z" fill="#ffffff" stroke="#111" stroke-width="6" />
+
+              <!-- Chubby Head & Cheeks -->
+              <g class="head-group" id="headGroup">
+                <!-- Head contour with chubby double chin & round cheeks -->
+                <path d="M 140,110 C 130,140 120,180 135,225 C 160,245 240,245 265,225 C 280,180 270,140 260,110 C 240,80 160,80 140,110 Z" fill="#ffffff" stroke="#111" stroke-width="7" />
+
+                <!-- Cute double chin crease -->
+                <path d="M 175,230 Q 200,240 225,230" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" />
+
+                <!-- Eyes -->
+                <g class="eyes" id="charEyes">
+                  <ellipse cx="165" cy="148" rx="8" ry="11" fill="#111" />
+                  <ellipse cx="167" cy="145" rx="3" ry="4" fill="#ffffff" />
+                  <ellipse cx="235" cy="148" rx="8" ry="11" fill="#111" />
+                  <ellipse cx="237" cy="145" rx="3" ry="4" fill="#ffffff" />
+                  <!-- Eyebrows -->
+                  <path d="M 152,130 Q 168,126 180,132" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" />
+                  <path d="M 220,132 Q 232,126 248,130" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" />
+                </g>
+
+                <!-- Nose -->
+                <path d="M 197,148 L 195,168 L 204,168" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Chewing Mouth / Blowing Kiss / Eating -->
+                <g class="mouth-group" id="charMouth">
+                  <!-- The funny puckered circle mouth from the poster -->
+                  <ellipse cx="205" cy="192" rx="14" ry="16" fill="#ffffff" stroke="#111" stroke-width="5" />
+                  <ellipse cx="205" cy="192" rx="7" ry="8" fill="#111" />
+                  <!-- Banana slice sticking out -->
+                  <path class="mouth-banana" d="M 215,190 Q 240,185 250,195 Q 240,205 215,195 Z" fill="#FFC700" stroke="#111" stroke-width="3" />
+                </g>
+
+                <!-- Ears -->
+                <path d="M 134,145 C 122,145 120,170 133,175" fill="#ffffff" stroke="#111" stroke-width="5" />
+                <path d="M 266,145 C 278,145 280,170 267,175" fill="#ffffff" stroke="#111" stroke-width="5" />
+
+                <!-- Hair & Cloth Headband (from poster) -->
+                <path d="M 145,95 Q 200,60 255,95" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round" />
+                <!-- Headband cloth bun -->
+                <path d="M 175,70 Q 185,55 200,55 Q 215,55 220,70 Q 200,75 175,70 Z" fill="#ffffff" stroke="#111" stroke-width="5" />
+                <path d="M 185,62 Q 200,60 210,65" fill="none" stroke="#111" stroke-width="3" />
+                <!-- Side hair wisps -->
+                <path d="M 142,105 Q 138,125 144,135" fill="none" stroke="#111" stroke-width="4" />
+                <path d="M 258,105 Q 262,125 256,135" fill="none" stroke="#111" stroke-width="4" />
+              </g>
+
+              <!-- Chewing crumb particles emitted by JS -->
+              <g id="crumbParticles"></g>
+            </svg>
+
+            <!-- Comic Speech Bubble -->
+            <div class="speech-bubble pop-in" id="introBubble">
+              <span class="bubble-text">“ถ้าชีวิตมันขม... กล้วยทอดร้อนๆ จะเยียวยาเธอเอง!”</span>
+              <div class="bubble-tail"></div>
+            </div>
+
+            <!-- Poke Belly Interactive Button -->
+            <button class="poke-btn" id="pokeBtn">👉 จิ้มแก้มพี่อ้วนดูสิ!</button>
+          </div>
+        </div>
+
+        <!-- Right: Story Introduction & Big Branding -->
+        <div class="story-col">
+          <div class="comic-badge shake-on-hover">อร่อยจนหยุดไม่ได้!</div>
+          <h1 class="main-title">
+            <span class="brush-bg">กล้วย</span><br>
+            <span class="highlight-word">อ้วน</span>
+            <span class="banana-float">🍌</span>
+          </h1>
+
+          <p class="story-lead">
+            ในตรอกลอยฟ้าแห่งหนึ่ง ชายร่างท้วมผู้มีรอยยิ้มแสนอบอุ่นและแก้มตุ่ยเป็นเอกลักษณ์<br>
+            เขามีนามว่า <strong>“พี่อ้วน”</strong> ผู้มีคติประจำใจว่า <em>“กล้วยทอดที่ดี ต้องกรอบจนข้างบ้านสะดุ้ง และนุ่มฉ่ำจนลืมความเหนื่อยล้า”</em>
+          </p>
+
+          <div class="story-card">
+            <div class="card-tag">บทนำ : จุดเริ่มต้นแห่งตำนาน</div>
+            <p>
+              พี่อ้วนทุ่มเทเวลาแรมปี เพื่อคิดค้นสุดยอดกล้วยทอดที่ไม่เหมือนใคร<br>
+              เดินทางบุกป่าหาหวีกล้วยทองคำ คัดสรรแป้งกรอบสูตรลับ และจุดไฟกระทะทองเหลือง<br>
+              พร้อมที่จะร่วมเดินทางไปค้นหา <strong>ความลับความอร่อย</strong> ของพี่อ้วนหรือยัง?
+            </p>
+          </div>
+
+          <div class="action-row">
+            <button class="primary-btn next-scene-btn" data-target="1">
+              <span>เริ่มออกเดินทาง ตอนที่ 1 ➔</span>
+            </button>
+            <button class="secondary-btn" id="autoPlayBtn">
+              <span>▶ เล่นนิทานอัตโนมัติ</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 1: THE BANANA QUEST ================= -->
+    <section class="story-scene" id="scene-1" data-index="1">
+      <div class="scene-bg banana-garden-bg"></div>
+      
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="badge-pill">ตอนที่ 1</span>
+          <h2>ตามล่า “กล้วยน้ำว้าทองคำ” สุกจัดคัดพิเศษ!</h2>
+          <p>กล้วยทอดจะอร่อย ต้องเริ่มจากกล้วยน้ำว้าสุกงอมพอดี ไส้เหลืองทอง หวานฉ่ำธรรมชาติ ไม่พึ่งน้ำตาลเคมี</p>
+        </div>
+
+        <!-- Interactive Banana Harvest Game -->
+        <div class="banana-tree-game">
+          <div class="game-instruction">
+            <span>👇 <strong>ภารกิจ:</strong> ช่วยพี่อ้วนเก็บกล้วยสุกจัดให้ครบ 5 ชิ้น (คลิกที่กล้วยบนต้น!)</span>
+            <div class="basket-counter">
+              ตะกร้า: <span id="bananaCount">0</span> / 5 ผล 🧺
+            </div>
+          </div>
+
+          <div class="tree-stage" id="treeStage">
+            <!-- SVG Banana Tree Branch -->
+            <svg class="tree-svg" viewBox="0 0 800 280">
+              <path d="M -50,60 Q 200,120 400,90 Q 600,60 850,110" stroke="#4A6B22" stroke-width="28" fill="none" stroke-linecap="round" />
+              <!-- Leaves -->
+              <path d="M 120,80 Q 80,180 50,220 C 110,210 150,160 170,90 Z" fill="#699933" />
+              <path d="M 320,85 Q 310,200 270,250 C 340,230 370,170 380,95 Z" fill="#588528" />
+              <path d="M 520,75 Q 550,190 590,240 C 580,170 560,130 540,80 Z" fill="#699933" />
+              <path d="M 680,100 Q 720,180 770,220 C 740,160 720,130 700,100 Z" fill="#588528" />
+            </svg>
+
+            <!-- Interactive Clickable Bananas -->
+            <div class="tree-bananas-container" id="treeBananas">
+              <!-- Rendered via JS or HTML elements -->
+            </div>
+
+            <!-- Basket at the bottom -->
+            <div class="basket-target" id="basketTarget">
+              <div class="basket-graphic">🧺 ตะกร้าหวายคัดเกรด</div>
+              <div class="basket-glow"></div>
+            </div>
+          </div>
+
+          <!-- Success Alert when 5 gathered -->
+          <div class="mini-modal hidden" id="harvestCompleteModal">
+            <div class="modal-card">
+              <span class="celebrate-emoji">🎉🍌✨</span>
+              <h3>ยอดเยี่ยมมาก! ได้กล้วยน้ำว้าชั้นเลิศแล้ว</h3>
+              <p>“กล้วยน้ำว้าสุกจัดลูกอวบ เนื้อแน่น หวานฉ่ำ พร้อมนำไปหั่นชิ้นหนาพอดีคำแล้ว!”</p>
+              <button class="primary-btn next-scene-btn" data-target="2">
+                ไปผสมแป้งสูตรลับ ตอนที่ 2 ➔
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 2: SECRET BATTER & SESAME ================= -->
+    <section class="story-scene" id="scene-2" data-index="2">
+      <div class="scene-bg kitchen-bg"></div>
+
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="badge-pill">ตอนที่ 2</span>
+          <h2>เคล็ดวิชา “แป้งทองพันชั้น & งาขาวคั่วหอม”</h2>
+          <p>ความลับของพี่อ้วนคือ <em>กะทิคั้นสดแท้</em> ผสมแป้งสูตรกรอบนาน โรยด้วยงาขาวคั่วหอมกรุ่น</p>
+        </div>
+
+        <div class="batter-mixing-stage">
+          <div class="mixing-sidebar">
+            <div class="ingredient-card" data-ing="flour">
+              <div class="ing-icon">🌾</div>
+              <div class="ing-info">
+                <strong>แป้งสูตรกรอบพิเศษ</strong>
+                <small>บางเบา ไม่อมน้ำมัน</small>
+              </div>
+              <span class="check-mark">✓ พร้อม</span>
+            </div>
+
+            <div class="ingredient-card" data-ing="coconut">
+              <div class="ing-icon">🥥</div>
+              <div class="ing-info">
+                <strong>หัวกะทิสดหอมมัน</strong>
+                <small>คั้นสดใหม่ทุกเช้า</small>
+              </div>
+              <span class="check-mark">✓ พร้อม</span>
+            </div>
+
+            <div class="ingredient-card" data-ing="sesame">
+              <div class="ing-icon">✨</div>
+              <div class="ing-info">
+                <strong>งาขาวคั่วโบราณ</strong>
+                <small>หอมเตะจมูกทุกคำ</small>
+              </div>
+              <span class="check-mark">✓ พร้อม</span>
+            </div>
+
+            <div class="stir-progress-box">
+              <label>ความเนียนของแป้ง:</label>
+              <div class="progress-track">
+                <div class="progress-fill" id="batterProgress" style="width: 15%;"></div>
+              </div>
+              <span id="stirStatusText">วนเมาส์หรือคลิกในชาม เพื่อคนแป้ง!</span>
+            </div>
+          </div>
+
+          <!-- Interactive Mixing Bowl -->
+          <div class="bowl-area" id="bowlArea">
+            <div class="bowl-wrapper">
+              <div class="bowl-rim"></div>
+              <div class="bowl-liquid" id="bowlLiquid">
+                <!-- Floating sesame particles & bubbles inside batter -->
+                <canvas id="batterCanvas" width="360" height="360"></canvas>
+                <!-- Spoon / Whisk that follows cursor -->
+                <div class="whisk-tool" id="whiskTool">🥄</div>
+              </div>
+            </div>
+            <div class="bowl-hint">🌀 ลากเมาส์วนๆ ในชามแป้ง หรือกดซ้ำๆ เพื่อตีแป้งให้เนียนกริบ!</div>
+
+            <!-- Complete Banner -->
+            <div class="batter-ready-banner hidden" id="batterReadyBanner">
+              <div class="banner-badge">แป้งเนียนนุ่ม หอมฟุ้งเข้ากันแล้ว!</div>
+              <button class="primary-btn next-scene-btn" data-target="3">
+                ลงกระทะทอด ตอนที่ 3 ➔
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 3: SIZZLING WOK CHALLENGE ================= -->
+    <section class="story-scene" id="scene-3" data-index="3">
+      <div class="scene-bg frying-bg"></div>
+
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="badge-pill">ตอนที่ 3</span>
+          <h2>มหายุทธการ “กระทะเดือด ฟองน้ำมันซู่ซ่า!”</h2>
+          <p>คุมไฟอุณหภูมิเป๊ะ 175°C ทอดร้อนๆ ชิ้นต่อชิ้นจนเหลืองทองกรอบฟู!</p>
+        </div>
+
+        <div class="wok-interactive-stage">
+          <div class="wok-controls-bar">
+            <div class="temp-gauge">
+              <span class="fire-icon">🔥</span>
+              <span>อุณหภูมิน้ำมัน: <strong id="wokTemp">175</strong>°C (พร้อมทอด!)</span>
+            </div>
+            <div class="fried-counter">
+              <span>ทอดสุกแล้ว: <strong id="friedCount">0</strong> / 4 ชิ้น</span>
+            </div>
+            <button class="action-btn drop-banana-btn" id="dropBananaBtn">
+              🍌 หย่อนกล้วยชุบแป้งลงกระทะ!
+            </button>
+          </div>
+
+          <!-- Giant Frying Wok with Canvas Bubbles & Sizzle sound -->
+          <div class="wok-container" id="wokContainer">
+            <div class="wok-brass">
+              <canvas id="oilCanvas" width="600" height="400"></canvas>
+              
+              <!-- Floating Frying Bananas in Wok -->
+              <div class="frying-items-layer" id="fryingItemsLayer"></div>
+
+              <!-- Strainer / Basket ready to catch -->
+              <div class="strainer-tray" id="strainerTray">
+                <div class="tray-label">ตะแกรงสะเด็ดน้ำมัน</div>
+                <div class="tray-items" id="trayItems"></div>
+              </div>
+            </div>
+
+            <!-- Sizzle Indicator -->
+            <div class="sizzle-text-bubble" id="sizzleBubble">
+              <span>ซู่ซู่ซ่าซ่าาาา~ 🔥</span>
+            </div>
+          </div>
+
+          <div class="frying-next-box hidden" id="fryingCompleteBox">
+            <div class="golden-fried-announcement">
+              🌟 กล้วยทอดสีเหลืองทอง กรอบสะเด็ดน้ำมันพร้อมเสิร์ฟแล้ว!
+            </div>
+            <button class="primary-btn next-scene-btn" data-target="4">
+              ไปชิมความกรอบ ตอนที่ 4 ➔
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 4: THE CRUNCH EXPERIENCE ================= -->
+    <section class="story-scene" id="scene-4" data-index="4">
+      <div class="scene-bg crunch-bg"></div>
+
+      <div class="scene-content split-layout">
+        <div class="crunch-display-col">
+          <div class="comic-sound-fx" id="comicSoundFx">กร๊อบบบบ!!</div>
+          
+          <!-- Interactive Big Fried Banana Piece -->
+          <div class="banana-crunch-stage" id="bananaCrunchStage">
+            <div class="bite-banana-graphic" id="biteBanana">
+              <!-- Banana with multiple bite state SVG -->
+              <svg class="banana-svg-bite" viewBox="0 0 320 220" id="biteSvg">
+                <defs>
+                  <linearGradient id="friedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FDB813" />
+                    <stop offset="50%" stop-color="#E67E22" />
+                    <stop offset="100%" stop-color="#B75200" />
+                  </linearGradient>
+                  <!-- Sesame Pattern -->
+                  <pattern id="sesamePattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <ellipse cx="5" cy="5" rx="1.5" ry="3" fill="#FFF7D6" transform="rotate(30 5 5)" />
+                    <ellipse cx="14" cy="14" rx="1.5" ry="3" fill="#FFF7D6" transform="rotate(-20 14 14)" />
+                  </pattern>
+                </defs>
+
+                <!-- Banana outer crispy fried batter -->
+                <path id="bananaShape" d="M 40,160 C 20,110 50,50 140,40 C 230,30 280,80 290,130 C 270,170 190,190 120,185 C 70,180 50,170 40,160 Z" fill="url(#friedGrad)" stroke="#532400" stroke-width="6" />
+                <!-- Sesame coat overlay -->
+                <path id="bananaSesame" d="M 40,160 C 20,110 50,50 140,40 C 230,30 280,80 290,130 C 270,170 190,190 120,185 C 70,180 50,170 40,160 Z" fill="url(#sesamePattern)" opacity="0.8" />
+                
+                <!-- Bite Marks (clip / layers will reveal soft steaming inner banana) -->
+                <g id="biteCutouts"></g>
+              </svg>
+            </div>
+            
+            <div class="click-bite-prompt">
+              <span class="finger-pointer">👆</span>
+              <strong>คลิกที่ชิ้นกล้วยทอดเพื่อ “กัดคำโตๆ!”</strong>
+              <small>(มีเสียงกรอบสะท้านหู! กรุบกรอบกี่คำแล้ว: <span id="biteCounter">0</span>/4)</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="crunch-text-col">
+          <div class="comic-badge red-badge">ความฟินระดับตำนาน!</div>
+          <h2>“กรอบนอก นุ่มใน หอม หวาน มัน อร่อยลงตัว!”</h2>
+          
+          <div class="flavor-breakdown">
+            <div class="flavor-item">
+              <span class="flavor-icon">💥</span>
+              <div>
+                <strong>สัมผัสแรก (First Crunch):</strong>
+                <p>แป้งกรอบระเบิดในปาก เสียงดัง *กร๊อบ!* ไม่อมน้ำมันแม้แต่นิดเดียว</p>
+              </div>
+            </div>
+            <div class="flavor-item">
+              <span class="flavor-icon">🍯</span>
+              <div>
+                <strong>สัมผัสต่อมา (Sweet Inside):</strong>
+                <p>เนื้อกล้วยน้ำว้าฉ่ำละมุน ไส้ครีมธรรมชาติ หวานชุ่มคอ</p>
+              </div>
+            </div>
+            <div class="flavor-item">
+              <span class="flavor-icon">🥥</span>
+              <div>
+                <strong>กลิ่นอบอวล (Aroma):</strong>
+                <p>กลิ่นกะทิและงาคั่วฟุ้งไปทั่วโพรงปาก ฟินจนคนทั้งซอยต้องหันมอง!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="primary-btn next-scene-btn" data-target="5">
+              เปิดร้าน "กล้วยอ้วน" ตอนสุดท้าย ➔
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 5: THE GRAND STALL & ORDER ================= -->
+    <section class="story-scene" id="scene-5" data-index="5">
+      <div class="scene-bg street-shop-bg"></div>
+
+      <div class="scene-content">
+        <div class="chapter-header">
+          <div class="header-tags">
+            <span class="badge-pill">บทสรุปแห่งความสำเร็จ</span>
+            <span class="badge-pill highlight-pill">ทอดสดใหม่ทุกวัน</span>
+          </div>
+          <h2>ยินดีต้อนรับสู่ร้าน “กล้วยอ้วน” สาขาแรก!</h2>
+          <p>จากความรักในของอร่อย พี่อ้วนเปิดร้านสตรีทฟู้ดยอดฮิต คิวยาวเหยียดพร้อมส่งตรงความกรอบถึงบ้านคุณ</p>
+        </div>
+
+        <div class="shop-showcase-grid">
+          <!-- Left: 4 Highlights from Original Poster -->
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="f-icon">🍌</div>
+              <h4>กล้วยน้ำว้าสุกจัด</h4>
+              <p>คัดพิเศษทุกลูก หวานฉ่ำธรรมชาติ</p>
+            </div>
+            <div class="feature-card">
+              <div class="f-icon">🍃</div>
+              <h4>ไร้สารกันบูด</h4>
+              <p>สด สะอาด ปลอดภัย มั่นใจได้ 100%</p>
+            </div>
+            <div class="feature-card">
+              <div class="f-icon">🌡️</div>
+              <h4>ทอดร้อนๆ</h4>
+              <p>คุมไฟเป๊ะ ทอดสดใหม่ทุกออเดอร์</p>
+            </div>
+            <div class="feature-card">
+              <div class="f-icon">🛵</div>
+              <h4>ส่งถึงบ้าน</h4>
+              <p>หอม กรอบ อร่อย เดลิเวอรีไวทันใจ</p>
+            </div>
+          </div>
+
+          <!-- Center: Interactive Order Box / Simulator -->
+          <div class="order-simulator">
+            <div class="sim-header">
+              <h3>📦 จัดกล่องกล้วยอ้วนของคุณ</h3>
+              <span class="live-status">● กระทะกำลังร้อน</span>
+            </div>
+
+            <div class="combo-selector">
+              <label class="combo-option">
+                <input type="radio" name="combo" value="35" data-title="ชุดอ้วนกรุบกริบ (5 ชิ้น)" checked>
+                <div class="combo-box">
+                  <strong>ชุดอ้วนกรุบกริบ (5 ชิ้น)</strong>
+                  <span>35.-</span>
+                </div>
+              </label>
+
+              <label class="combo-option">
+                <input type="radio" name="combo" value="50" data-title="ชุดอ้วนจุใจ (8 ชิ้น)">
+                <div class="combo-box">
+                  <strong>ชุดอ้วนจุใจ (8 ชิ้น)</strong>
+                  <span>50.-</span>
+                </div>
+              </label>
+
+              <label class="combo-option">
+                <input type="radio" name="combo" value="100" data-title="ชุดอ้วนสะท้านปฐพี (18 ชิ้น)">
+                <div class="combo-box">
+                  <strong>ชุดอ้วนสะท้านปฐพี (18 ชิ้น)</strong>
+                  <span>100.-</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Delivery Bike Animation Preview -->
+            <div class="delivery-anim-track">
+              <div class="rider-moped" id="riderMoped">🛵💨</div>
+              <div class="street-line"></div>
+            </div>
+
+            <div class="order-summary-row">
+              <div>ยอดรวม: <span class="total-price" id="totalPrice">35</span> บาท</div>
+              <button class="primary-btn pulse-glow" id="orderNowBtn">
+                🚀 สั่งทอดเดี๋ยวนี้! (เดลิเวอรี)
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Contact & Poster Badges -->
+          <div class="contact-card">
+            <div class="brand-crest">
+              <span class="crest-emoji">👨‍🍳</span>
+              <h3>ร้านกล้วยอ้วน</h3>
+              <div class="slogan-quote">“ของดี ต้องลอง!”</div>
+            </div>
+
+            <ul class="contact-list">
+              <li>
+                <span class="c-icon">📘</span>
+                <span>Facebook: <strong>กล้วยอ้วน</strong></span>
+              </li>
+              <li>
+                <span class="c-icon">💬</span>
+                <span>LINE: <strong>@kluayuan</strong></span>
+              </li>
+              <li>
+                <span class="c-icon">📞</span>
+                <span>โทร: <strong>09x-xxx-xxxx</strong></span>
+              </li>
+            </ul>
+
+            <div class="story-replay-box">
+              <button class="secondary-btn" id="replayStoryBtn">
+                🔄 เล่นนิทานใหม่อีกรอบ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Delivery Success Modal -->
+  <div class="order-modal-backdrop hidden" id="orderModal">
+    <div class="order-modal-card pop-bounce">
+      <div class="rider-flying">🛵💨💨💨</div>
+      <h2>ออเดอร์กล้วยทอดกำลังเหินฟ้าไปหาคุณ!</h2>
+      <p id="orderModalDesc">พี่อ้วนตักขึ้นจากกระทะสะเด็ดน้ำมันร้อนๆ ส่งมอบให้ไรเดอร์แล้ว กรอบฟินแน่นอน!</p>
+      <div class="receipt-box">
+        <div id="receiptItem">ชุดอ้วนกรุบกริบ (5 ชิ้น)</div>
+        <div id="receiptCost">35 บาท</div>
+      </div>
+      <button class="primary-btn" id="closeOrderModalBtn">อร่อยแน่นอน ขอบคุณครับ!</button>
+    </div>
+  </div>
+
+  <!-- Poster View Modal -->
+  <div class="poster-modal-backdrop hidden" id="posterModal">
+    <div class="poster-modal-content">
+      <button class="close-modal-btn" id="closePosterBtn">✕ ปิด</button>
+      <div class="poster-modal-inner">
+        <img src="assets/poster.jpg" alt="กล้วยอ้วน โปสเตอร์ต้นฉบับ" class="poster-img-full">
+        <div class="poster-caption">
+          <h3>โปสเตอร์ต้นฉบับ “กล้วยอ้วน”</h3>
+          <p>แรงบันดาลใจแห่งลายเส้นการ์ตูนพี่อ้วน สีเหลืองสดสะใจ และความกรอบสะท้านใจ!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="audio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
